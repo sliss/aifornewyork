@@ -4,6 +4,7 @@ import Signature from '@/models/Signature';
 import LegislationCard from '@/components/LegislationCard';
 import StoryCard from '@/components/StoryCard';
 import CoalitionGrid from '@/components/CoalitionGrid';
+import SignatoryList from '@/components/SignatoryList';
 import Button from '@/components/ui/Button';
 import { getStoryFrontmatter } from '@/lib/stories';
 
@@ -128,6 +129,13 @@ export default async function HomePage() {
             Coalition of Support
           </h2>
           <CoalitionGrid orgs={orgs} signatureCount={signatureCount} />
+        </div>
+      </section>
+
+      {/* Signatories */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <SignatoryList billSlug="s7263-ai-chatbot-professional-advice-ban" />
         </div>
       </section>
     </div>

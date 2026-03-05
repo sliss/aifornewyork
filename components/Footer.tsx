@@ -29,6 +29,11 @@ export default function Footer() {
                   aifornewyork@gmail.com
                 </a>
               </li>
+              <li>
+                <a href="https://x.com/aifornewyork" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  @aifornewyork
+                </a>
+              </li>
               <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>

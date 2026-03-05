@@ -68,7 +68,7 @@ We write to express our strong opposition to Senate Bill S7263, which would proh
 
 **Access to information is a fundamental right.** New Yorkers have always had the right to read law books, medical references, and tax guides. AI tools are the 21st century's version of the public library — they make complex information accessible to everyone, not just those who can afford professional consultations.
 
-**This bill would disproportionately harm vulnerable New Yorkers.** Low-income tenants, immigrants, small business owners, and first-generation students are the people who benefit most from free, instant access to AI-powered information. They are also the people least able to afford the professional services this bill would force them to use.
+**This bill would disproportionately harm vulnerable New Yorkers.** Low-income tenants, immigrants, small business owners, and first-generation students are the people who benefit most from affordable, instant access to AI-powered information. They are also the people least able to afford the professional services this bill would force them to use.
 
 **We support smart AI regulation.** We believe AI tools should clearly disclose that they are not human professionals. We believe disclaimers should be prominent. We believe AI companies should be held accountable for harmful misinformation. But we do not believe the solution is to ban information access entirely.
 

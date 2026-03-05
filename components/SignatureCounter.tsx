@@ -3,7 +3,7 @@ interface SignatureCounterProps {
   label?: string;
 }
 
-export default function SignatureCounter({ count, label = 'New Yorkers have signed' }: SignatureCounterProps) {
+export default function SignatureCounter({ count, label = 'Signatures' }: SignatureCounterProps) {
   return (
     <div className="text-center">
       <div className="count-animate">

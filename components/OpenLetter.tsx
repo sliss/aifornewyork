@@ -13,7 +13,7 @@ export default function OpenLetter({ body, signatureCount }: OpenLetterProps) {
         <p className="font-serif text-2xl font-bold text-navy mb-1">
           {signatureCount.toLocaleString()}
         </p>
-        <p className="font-ui text-sm text-text-light">New Yorkers have signed</p>
+        <p className="font-ui text-sm text-text-light">Signatures</p>
       </div>
     </div>
   );

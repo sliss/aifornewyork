@@ -7,6 +7,7 @@ import StatusPipeline from '@/components/StatusPipeline';
 import SignatureForm from '@/components/SignatureForm';
 import OpenLetter from '@/components/OpenLetter';
 import RepLookup from '@/components/RepLookup';
+import SignatoryList from '@/components/SignatoryList';
 import { renderMarkdown } from '@/lib/markdown';
 import { THREAT_COLORS, formatDate } from '@/lib/utils';
 
@@ -91,6 +92,11 @@ export default async function LegislationDetailPage({ params }: PageProps) {
             <OpenLetter body={bill.open_letter_body} signatureCount={signatureCount} />
           </div>
         )}
+
+        {/* Signatories */}
+        <div className="mb-10">
+          <SignatoryList billSlug={bill.slug} />
+        </div>
 
         {/* Signature Form */}
         <div className="mb-10">

@@ -122,11 +122,27 @@ Sincerely,
               <p className="font-ui text-xs text-text-light uppercase tracking-wide mb-1">State Senator — District {district.senate_district}</p>
               <p className="font-serif text-lg font-bold text-navy">{district.senator_name}</p>
               <p className="font-ui text-sm text-text-light">{district.senator_party === 'D' ? 'Democrat' : 'Republican'}</p>
+              <a
+                href={`https://www.nysenate.gov/district/${district.senate_district}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 text-xs font-ui font-semibold text-amber hover:text-amber-dark transition-colors"
+              >
+                Contact on NYSenate.gov &rarr;
+              </a>
             </div>
             <div className="bg-offwhite rounded-lg p-4">
               <p className="font-ui text-xs text-text-light uppercase tracking-wide mb-1">Assembly Member — District {district.assembly_district}</p>
               <p className="font-serif text-lg font-bold text-navy">{district.assembly_member_name}</p>
               <p className="font-ui text-sm text-text-light">{district.assembly_member_party === 'D' ? 'Democrat' : 'Republican'}</p>
+              <a
+                href={`https://nyassembly.gov/mem/?ad=${district.assembly_district}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 text-xs font-ui font-semibold text-amber hover:text-amber-dark transition-colors"
+              >
+                Contact on NYAssembly.gov &rarr;
+              </a>
             </div>
           </div>
 

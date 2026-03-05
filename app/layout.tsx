@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@aifornewyork',
     title: 'AI For New York',
     description: 'A nonpartisan coalition fighting legislation that would strip legal, medical, and professional information from the people who need it most.',
   },

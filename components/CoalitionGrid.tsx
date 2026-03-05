@@ -17,7 +17,7 @@ export default function CoalitionGrid({ orgs, signatureCount }: CoalitionGridPro
         <p className="font-serif text-4xl md:text-5xl font-bold text-navy">
           {signatureCount.toLocaleString()}
         </p>
-        <p className="font-ui text-text-light mt-1 text-lg">New Yorkers have signed</p>
+        <p className="font-ui text-text-light mt-1 text-lg">Signatures</p>
       </div>
 
       {orgs.length > 0 && (

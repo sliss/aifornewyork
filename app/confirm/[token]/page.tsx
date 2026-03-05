@@ -64,7 +64,7 @@ export default async function ConfirmPage({ params }: PageProps) {
           {totalCount.toLocaleString()}
         </p>
         <p className="font-ui text-sm text-text-light mb-8">
-          New Yorkers have signed — including you.
+          Signatures — including you.
         </p>
 
         <div className="space-y-3">
