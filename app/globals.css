@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #0A1628;
+  --color-navy-light: #152238;
+  --color-amber: #D4920B;
+  --color-amber-light: #E8A620;
+  --color-amber-dark: #B87D09;
+  --color-offwhite: #FAFAF7;
+  --color-text: #1a1a2e;
+  --color-text-light: #4a4a5a;
+  --color-danger: #DC2626;
+  --color-watch: #D4920B;
+  --color-support: #16A34A;
+  --color-border: #E5E5E0;
+
+  --font-serif: var(--font-playfair);
+  --font-body: var(--font-source-sans);
+  --font-ui: var(--font-dm-sans);
+}
+
+body {
+  background: var(--color-offwhite);
+  color: var(--color-text);
+  font-family: var(--font-body), Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), Georgia, serif;
+  color: var(--color-navy);
+}
+
+/* Prose styles for MDX content */
+.prose h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  color: var(--color-navy);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.prose h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  color: var(--color-navy);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--color-amber);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--color-text-light);
+}
+
+.prose a {
+  color: var(--color-amber) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+
+.prose a:hover {
+  color: var(--color-amber-dark) !important;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+/* Signature counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.count-animate {
+  animation: countUp 0.6s ease-out;
+}
