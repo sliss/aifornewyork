@@ -16,10 +16,10 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-navy text-white">
+    <nav className="bg-white border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="font-serif text-xl font-bold tracking-tight">
+          <Link href="/" className="font-serif text-xl font-bold tracking-tight text-navy">
             AI For New York
           </Link>
 
@@ -29,7 +29,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-ui text-gray-300 hover:text-white transition-colors"
+                className="text-sm font-ui text-text-light hover:text-navy transition-colors"
               >
                 {link.label}
               </Link>
@@ -44,7 +44,7 @@ export default function Navigation() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-text"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -60,12 +60,12 @@ export default function Navigation() {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 border-t border-navy-light">
+          <div className="md:hidden pb-4 border-t border-border">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 text-sm font-ui text-gray-300 hover:text-white"
+                className="block py-2 text-sm font-ui text-text-light hover:text-navy"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}

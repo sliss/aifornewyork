@@ -46,29 +46,34 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-navy text-white py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          {/* Wordmark */}
-          <div className="mb-8">
+          {/* Wordmark with Logo */}
+          <div className="mb-8 flex items-center justify-center gap-4 md:gap-6">
+            <img
+              src="/aiforny.png"
+              alt="AI for New York logo"
+              className="w-24 h-24 md:w-36 md:h-36 flex-shrink-0"
+            />
             <img
               src="/wordmark.svg"
               alt="AI for New York"
-              className="w-full max-w-2xl mx-auto h-auto"
+              className="h-auto flex-1 max-w-md md:max-w-xl"
               role="img"
             />
           </div>
           <h1 className="sr-only">AI For New York — Protecting New Yorkers&apos; Right to AI-Powered Information</h1>
-          <p className="font-serif text-2xl md:text-3xl font-bold leading-tight text-white mb-4">
+          <p className="font-serif text-2xl md:text-3xl font-bold leading-tight text-navy mb-4">
             Protecting New Yorkers&apos; Right to AI-Powered Information
           </p>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-text-light leading-relaxed mb-10 max-w-2xl mx-auto">
             A nonpartisan coalition fighting legislation that would strip legal, medical, and professional information from the people who need it most.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/sign/s7263-ai-chatbot-professional-advice-ban" variant="primary" size="lg">
               Sign the Open Letter
             </Button>
-            <Button href="/legislation/s7263-ai-chatbot-professional-advice-ban" variant="secondary" size="lg" className="!border-white !text-white hover:!bg-white hover:!text-navy">
+            <Button href="/legislation/s7263-ai-chatbot-professional-advice-ban" variant="secondary" size="lg">
               Track Legislation
             </Button>
           </div>
@@ -101,12 +106,12 @@ export default async function HomePage() {
       </section>
 
       {/* AI in Action Stories */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-dark-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy text-center mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white text-center mb-4">
             AI in Action
           </h2>
-          <p className="text-text-light text-center mb-10 max-w-2xl mx-auto">
+          <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
             Real stories from New Yorkers who rely on AI tools for critical information.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -115,7 +120,7 @@ export default async function HomePage() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Button href="/stories" variant="secondary">
+            <Button href="/stories" variant="secondary" className="!border-white !text-white hover:!bg-white hover:!text-navy">
               Read All Stories
             </Button>
           </div>
@@ -133,7 +138,7 @@ export default async function HomePage() {
       </section>
 
       {/* Signatories */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <SignatoryList billSlug="s7263-ai-chatbot-professional-advice-ban" />
         </div>

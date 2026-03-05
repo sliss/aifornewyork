@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Source_Sans_3, DM_Sans } from 'next/font/google';
+import { DM_Serif_Display, Source_Sans_3, DM_Sans } from 'next/font/google';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import './globals.css';
 
-const playfair = Playfair_Display({
+const dmSerifDisplay = DM_Serif_Display({
   variable: '--font-playfair',
+  weight: '400',
   subsets: ['latin'],
   display: 'swap',
 });
@@ -28,6 +29,10 @@ export const metadata: Metadata = {
     template: '%s | AI For New York',
   },
   description: 'A nonpartisan coalition fighting legislation that would strip legal, medical, and professional information from the people who need it most.',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -50,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${sourceSans.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${dmSerifDisplay.variable} ${sourceSans.variable} ${dmSans.variable}`}>
       <head>
         {process.env.PLAUSIBLE_DOMAIN && (
           <script
