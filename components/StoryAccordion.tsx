@@ -45,7 +45,7 @@ export default function StoryAccordion({ stories }: { stories: Story[] }) {
                   <span className="font-serif text-lg md:text-xl font-bold text-navy shrink-0">
                     {story.use_case}
                   </span>
-                  <span className="font-body text-[15px] md:text-base text-text-light leading-snug truncate">
+                  <span className="hidden md:inline font-body text-[15px] md:text-base text-text-light leading-snug truncate">
                     {story.title}
                   </span>
                 </div>

@@ -204,7 +204,7 @@ export default async function HomePage() {
           <div className="absolute -top-1/2 -right-[20%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(255,107,74,0.2)_0%,transparent_60%)] pointer-events-none" />
           <div className="absolute -bottom-[40%] -left-[10%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.05)_0%,transparent_60%)] pointer-events-none" />
           <div className="relative z-10">
-            <h2 className="font-serif text-[clamp(36px,4vw,52px)] text-white leading-[1.1] tracking-[-0.02em] mb-5">
+            <h2 className="font-serif text-[clamp(36px,4vw,52px)] !text-white leading-[1.1] tracking-[-0.02em] mb-5">
               Don&apos;t let Albany<br />disconnect New York
             </h2>
             <p className="text-[17px] text-[rgba(255,255,255,0.7)] max-w-[480px] mx-auto mb-10 leading-relaxed">
