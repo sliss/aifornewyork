@@ -47,17 +47,17 @@ export default async function LegislationDetailPage({ params }: PageProps) {
   const threat = THREAT_COLORS[bill.threat_level] || THREAT_COLORS.watch;
 
   return (
-    <div className="py-12 md:py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+    <div className="pt-[100px] pb-16 md:pb-20">
+      <div className="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-3">
-            <span className="font-ui text-sm font-bold text-navy">{bill.bill_number}</span>
+            <span className="font-mono text-sm font-medium text-navy tracking-[0.05em]">{bill.bill_number}</span>
             <span className={`${threat.bg} ${threat.text} px-2.5 py-0.5 rounded-full text-xs font-ui font-semibold`}>
               {threat.label}
             </span>
           </div>
-          <h1 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-3">{bill.title}</h1>
+          <h1 className="font-serif text-3xl md:text-4xl font-bold text-text mb-3">{bill.title}</h1>
           <div className="flex flex-wrap gap-4 text-sm text-text-light font-ui">
             <span>Sponsor: {bill.sponsor}</span>
             <span>Last Action: {formatDate(bill.last_action_date)}</span>
@@ -66,8 +66,8 @@ export default async function LegislationDetailPage({ params }: PageProps) {
         </div>
 
         {/* Status Pipeline */}
-        <div className="bg-white border border-border rounded-lg p-6 mb-10">
-          <h2 className="font-ui text-sm font-semibold text-navy uppercase tracking-wide mb-4">Bill Status</h2>
+        <div className="bg-white border border-border rounded-2xl p-6 mb-10">
+          <h2 className="font-mono text-xs font-medium text-navy uppercase tracking-[0.08em] mb-4">Bill Status</h2>
           <StatusPipeline currentStatus={bill.status} />
         </div>
 
@@ -109,4 +109,3 @@ export default async function LegislationDetailPage({ params }: PageProps) {
     </div>
   );
 }
-

@@ -82,8 +82,8 @@ Sincerely,
   };
 
   return (
-    <div className="bg-white border border-border rounded-lg p-6 md:p-8">
-      <h3 className="font-serif text-2xl font-bold text-navy mb-2">Contact Your Representatives</h3>
+    <div className="bg-white border border-border rounded-2xl p-6 md:p-8">
+      <h3 className="font-serif text-2xl font-bold text-text mb-2">Contact Your Representatives</h3>
       <p className="text-text-light text-sm mb-6">
         Enter your New York address to find your State Senator and Assembly Member.
       </p>
@@ -95,7 +95,7 @@ Sincerely,
           onChange={(e) => setAddress(e.target.value)}
           placeholder="Enter your address (e.g., 280 Madison Ave, New York, NY)"
           required
-          className="flex-1 border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+          className="flex-1 border border-border rounded-xl px-4 py-2.5 text-sm font-body focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent transition-all"
         />
         <Button type="submit" disabled={loading}>
           {loading ? 'Looking up...' : 'Find My Reps'}
@@ -103,7 +103,7 @@ Sincerely,
       </form>
 
       {error && (
-        <div className="bg-red-50 border border-red-200 rounded-md p-3 text-sm text-red-800 mb-4">
+        <div className="bg-red-50 border border-red-200 rounded-xl p-3 text-sm text-red-800 mb-4">
           {error}
         </div>
       )}
@@ -118,28 +118,28 @@ Sincerely,
 
           {/* Representatives */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-offwhite rounded-lg p-4">
-              <p className="font-ui text-xs text-text-light uppercase tracking-wide mb-1">State Senator — District {district.senate_district}</p>
-              <p className="font-serif text-lg font-bold text-navy">{district.senator_name}</p>
+            <div className="bg-offwhite rounded-2xl p-5">
+              <p className="font-mono text-[11px] text-text-light uppercase tracking-[0.08em] mb-1">State Senator — District {district.senate_district}</p>
+              <p className="font-serif text-lg font-bold text-text">{district.senator_name}</p>
               <p className="font-ui text-sm text-text-light">{district.senator_party === 'D' ? 'Democrat' : 'Republican'}</p>
               <a
                 href={`https://www.nysenate.gov/district/${district.senate_district}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-2 text-xs font-ui font-semibold text-amber hover:text-amber-dark transition-colors"
+                className="inline-block mt-2 text-xs font-ui font-semibold text-navy hover:text-blue-dark transition-colors"
               >
                 Contact on NYSenate.gov &rarr;
               </a>
             </div>
-            <div className="bg-offwhite rounded-lg p-4">
-              <p className="font-ui text-xs text-text-light uppercase tracking-wide mb-1">Assembly Member — District {district.assembly_district}</p>
-              <p className="font-serif text-lg font-bold text-navy">{district.assembly_member_name}</p>
+            <div className="bg-offwhite rounded-2xl p-5">
+              <p className="font-mono text-[11px] text-text-light uppercase tracking-[0.08em] mb-1">Assembly Member — District {district.assembly_district}</p>
+              <p className="font-serif text-lg font-bold text-text">{district.assembly_member_name}</p>
               <p className="font-ui text-sm text-text-light">{district.assembly_member_party === 'D' ? 'Democrat' : 'Republican'}</p>
               <a
                 href={`https://nyassembly.gov/mem/?ad=${district.assembly_district}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-2 text-xs font-ui font-semibold text-amber hover:text-amber-dark transition-colors"
+                className="inline-block mt-2 text-xs font-ui font-semibold text-navy hover:text-blue-dark transition-colors"
               >
                 Contact on NYAssembly.gov &rarr;
               </a>
@@ -149,16 +149,16 @@ Sincerely,
           {/* Phone Script */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <h4 className="font-ui text-sm font-semibold text-navy">Phone Script (30 seconds)</h4>
+              <h4 className="font-ui text-sm font-semibold text-text">Phone Script (30 seconds)</h4>
               <button
                 type="button"
                 onClick={() => handleCopy(phoneScript, 'phone')}
-                className="text-xs font-ui text-amber hover:text-amber-dark"
+                className="text-xs font-ui text-navy hover:text-blue-dark"
               >
                 {copied === 'phone' ? 'Copied!' : 'Copy to clipboard'}
               </button>
             </div>
-            <div className="bg-offwhite rounded-lg p-4 text-sm text-text leading-relaxed">
+            <div className="bg-offwhite rounded-2xl p-5 text-sm text-text-body leading-relaxed">
               {phoneScript}
             </div>
           </div>
@@ -166,16 +166,16 @@ Sincerely,
           {/* Email Template */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <h4 className="font-ui text-sm font-semibold text-navy">Email Template</h4>
+              <h4 className="font-ui text-sm font-semibold text-text">Email Template</h4>
               <button
                 type="button"
                 onClick={() => handleCopy(emailTemplate, 'email')}
-                className="text-xs font-ui text-amber hover:text-amber-dark"
+                className="text-xs font-ui text-navy hover:text-blue-dark"
               >
                 {copied === 'email' ? 'Copied!' : 'Copy to clipboard'}
               </button>
             </div>
-            <div className="bg-offwhite rounded-lg p-4 text-sm text-text leading-relaxed whitespace-pre-line">
+            <div className="bg-offwhite rounded-2xl p-5 text-sm text-text-body leading-relaxed whitespace-pre-line">
               {emailTemplate}
             </div>
           </div>

@@ -1,24 +1,24 @@
 import type { Metadata } from 'next';
-import { DM_Serif_Display, Source_Sans_3, DM_Sans } from 'next/font/google';
+import { DM_Serif_Display, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import './globals.css';
 
 const dmSerifDisplay = DM_Serif_Display({
-  variable: '--font-playfair',
+  variable: '--font-dm-serif',
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
 });
 
-const sourceSans = Source_Sans_3({
-  variable: '--font-source-sans',
+const instrumentSans = Instrument_Sans({
+  variable: '--font-instrument-sans',
   subsets: ['latin'],
   display: 'swap',
 });
 
-const dmSans = DM_Sans({
-  variable: '--font-dm-sans',
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
   subsets: ['latin'],
   display: 'swap',
 });
@@ -55,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSerifDisplay.variable} ${sourceSans.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${dmSerifDisplay.variable} ${instrumentSans.variable} ${jetbrainsMono.variable}`}>
       <head>
         {process.env.PLAUSIBLE_DOMAIN && (
           <script

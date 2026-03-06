@@ -3,38 +3,55 @@
 @theme inline {
   --color-navy: #1a3eff;
   --color-navy-light: #4d6fff;
+  --color-blue-dark: #0a1a8f;
   --color-amber: #ff6b4a;
   --color-amber-light: #ff8a70;
-  --color-amber-dark: #e5523a;
+  --color-amber-dark: #e85a3a;
   --color-offwhite: #faf8f5;
-  --color-text: #1a1a2e;
-  --color-text-light: #4a4a5a;
+  --color-text: #0a0a0a;
+  --color-text-light: #6b6b6b;
+  --color-text-body: #404040;
+  --color-muted: #b0b0b0;
   --color-danger: #DC2626;
   --color-watch: #ff6b4a;
   --color-support: #16A34A;
   --color-border: rgba(0,0,0,0.06);
   --color-dark-surface: #1a1a1a;
 
-  --font-serif: var(--font-playfair);
-  --font-body: var(--font-source-sans);
-  --font-ui: var(--font-dm-sans);
+  --font-serif: var(--font-dm-serif);
+  --font-body: var(--font-instrument-sans);
+  --font-ui: var(--font-instrument-sans);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
+/* ─── BASE ─── */
 body {
   background: var(--color-offwhite);
-  color: var(--color-text);
-  font-family: var(--font-body), Georgia, serif;
+  color: var(--color-text-body);
+  font-family: var(--font-body), -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 9999;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif), Georgia, serif;
-  color: var(--color-navy);
+  color: var(--color-text);
 }
 
-/* Prose styles for MDX content */
+/* ─── PROSE ─── */
 .prose h2 {
   font-family: var(--font-serif), Georgia, serif;
-  color: var(--color-navy);
+  color: var(--color-text);
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 1.5rem;
@@ -43,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .prose h3 {
   font-family: var(--font-serif), Georgia, serif;
-  color: var(--color-navy);
+  color: var(--color-text);
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
   font-size: 1.25rem;
@@ -64,19 +81,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .prose a {
-  color: var(--color-amber) !important;
+  color: var(--color-navy) !important;
   text-decoration: underline !important;
   text-underline-offset: 2px;
   transition: color 0.15s;
 }
 
 .prose a:hover {
-  color: var(--color-amber-dark) !important;
+  color: var(--color-blue-dark) !important;
 }
 
 .prose strong {
   font-weight: 600;
-  color: var(--color-navy);
+  color: var(--color-text);
 }
 
 .prose ul, .prose ol {
@@ -89,7 +106,57 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-/* Signature counter animation */
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── TICKER ─── */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: ticker-scroll 30s linear infinite;
+}
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+}
+
+/* ─── IMPACT CARD HOVER BAR ─── */
+.impact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-navy);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.impact-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ─── ANIMATIONS ─── */
 @keyframes countUp {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -97,4 +164,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .count-animate {
   animation: countUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }

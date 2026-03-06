@@ -34,11 +34,11 @@ export default function StatusPipeline({ currentStatus, compact = false }: Statu
                       : 'bg-gray-200 text-gray-400'
                   }`}
                 >
-                  {isActive && !isCurrent ? '✓' : index + 1}
+                  {isActive && !isCurrent ? '\u2713' : index + 1}
                 </div>
                 <span
                   className={`mt-1 ${labelStyle} font-ui text-center ${
-                    isActive ? 'text-navy font-semibold' : 'text-gray-400'
+                    isActive ? 'text-text font-semibold' : 'text-gray-400'
                   }`}
                 >
                   {STATUS_LABELS[step]}
@@ -73,11 +73,11 @@ export default function StatusPipeline({ currentStatus, compact = false }: Statu
                     : 'bg-gray-200 text-gray-400'
                 }`}
               >
-                {isActive && !isCurrent ? '✓' : index + 1}
+                {isActive && !isCurrent ? '\u2713' : index + 1}
               </div>
               <span
                 className={`text-sm font-ui ${
-                  isActive ? 'text-navy font-semibold' : 'text-gray-400'
+                  isActive ? 'text-text font-semibold' : 'text-gray-400'
                 }`}
               >
                 {STATUS_LABELS[step]}

@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="py-12 md:py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <h1 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-8">About AI For New York</h1>
+    <div className="pt-[100px] pb-16 md:pb-20">
+      <div className="max-w-3xl mx-auto px-6">
+        <h1 className="font-serif text-3xl md:text-4xl font-bold text-text mb-8">About AI For New York</h1>
 
         <div className="prose">
           <h2>Our Mission</h2>
@@ -28,7 +28,7 @@ export default function AboutPage() {
             For press inquiries, partnership proposals, or general questions:
           </p>
           <p>
-            <a href="mailto:aifornewyork@gmail.com" className="text-amber hover:text-amber-dark">
+            <a href="mailto:aifornewyork@gmail.com">
               aifornewyork@gmail.com
             </a>
           </p>

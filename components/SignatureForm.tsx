@@ -85,10 +85,10 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
 
   if (success) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
-        <h3 className="font-serif text-2xl font-bold text-navy mb-3">Thank you!</h3>
+      <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
+        <h3 className="font-serif text-2xl font-bold text-text mb-3">Thank you!</h3>
         <p className="text-text-light mb-4">
-          We&apos;ve sent a confirmation email to <strong>{formData.email}</strong>.
+          We&apos;ve sent a confirmation email to <strong className="text-text">{formData.email}</strong>.
           Please click the link in the email to confirm your signature.
         </p>
         <p className="text-sm text-text-light">
@@ -98,9 +98,11 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
     );
   }
 
+  const inputClasses = "w-full border border-border rounded-xl px-4 py-2.5 text-sm font-body focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent transition-all";
+
   return (
-    <div className="bg-white border border-border rounded-lg p-6 md:p-8">
-      <h3 className="font-serif text-2xl font-bold text-navy mb-2">Sign the Open Letter</h3>
+    <div className="bg-white border border-border rounded-2xl p-6 md:p-8">
+      <h3 className="font-serif text-2xl font-bold text-text mb-2">Sign the Open Letter</h3>
       <p className="text-text-light text-sm mb-6">
         Add your name to oppose {billNumber}. Your signature matters.
       </p>
@@ -110,7 +112,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
         <button
           type="button"
           onClick={() => setMode('individual')}
-          className={`px-4 py-2 rounded-md text-sm font-ui font-semibold transition-colors ${
+          className={`px-5 py-2 rounded-full text-sm font-ui font-semibold transition-all ${
             mode === 'individual'
               ? 'bg-navy text-white'
               : 'bg-gray-100 text-text-light hover:bg-gray-200'
@@ -121,7 +123,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
         <button
           type="button"
           onClick={() => setMode('organization')}
-          className={`px-4 py-2 rounded-md text-sm font-ui font-semibold transition-colors ${
+          className={`px-5 py-2 rounded-full text-sm font-ui font-semibold transition-all ${
             mode === 'organization'
               ? 'bg-navy text-white'
               : 'bg-gray-100 text-text-light hover:bg-gray-200'
@@ -147,7 +149,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
         </div>
 
         <div>
-          <label htmlFor="full_name" className="block text-sm font-ui font-semibold text-navy mb-1">
+          <label htmlFor="full_name" className="block text-sm font-ui font-semibold text-text mb-1">
             Full Name <span className="text-danger">*</span>
           </label>
           <input
@@ -157,12 +159,12 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
             required
             value={formData.full_name}
             onChange={handleChange}
-            className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+            className={inputClasses}
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-ui font-semibold text-navy mb-1">
+          <label htmlFor="email" className="block text-sm font-ui font-semibold text-text mb-1">
             Email <span className="text-danger">*</span>
           </label>
           <input
@@ -172,7 +174,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+            className={inputClasses}
           />
           {mode === 'organization' && (
             <p className="text-xs text-text-light mt-1">Please use your organization email address (not Gmail, Yahoo, etc.)</p>
@@ -180,7 +182,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
         </div>
 
         <div>
-          <label htmlFor="zip_code" className="block text-sm font-ui font-semibold text-navy mb-1">
+          <label htmlFor="zip_code" className="block text-sm font-ui font-semibold text-text mb-1">
             ZIP Code <span className="text-danger">*</span>
           </label>
           <input
@@ -192,13 +194,13 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
             pattern="[0-9]{5}"
             value={formData.zip_code}
             onChange={handleChange}
-            className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+            className={inputClasses}
             placeholder="10001"
           />
         </div>
 
         <div>
-          <label htmlFor="borough_or_city" className="block text-sm font-ui font-semibold text-navy mb-1">
+          <label htmlFor="borough_or_city" className="block text-sm font-ui font-semibold text-text mb-1">
             Borough or City
           </label>
           <input
@@ -207,14 +209,14 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
             name="borough_or_city"
             value={formData.borough_or_city}
             onChange={handleChange}
-            className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+            className={inputClasses}
             placeholder="The Bronx"
           />
         </div>
 
         {mode === 'individual' && (
           <div>
-            <label htmlFor="description" className="block text-sm font-ui font-semibold text-navy mb-1">
+            <label htmlFor="description" className="block text-sm font-ui font-semibold text-text mb-1">
               One-line description
             </label>
             <input
@@ -223,7 +225,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
               name="description"
               value={formData.description}
               onChange={handleChange}
-              className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+              className={inputClasses}
               placeholder="Tenant in the Bronx"
             />
           </div>
@@ -232,7 +234,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
         {mode === 'organization' && (
           <>
             <div>
-              <label htmlFor="org_name" className="block text-sm font-ui font-semibold text-navy mb-1">
+              <label htmlFor="org_name" className="block text-sm font-ui font-semibold text-text mb-1">
                 Organization Name <span className="text-danger">*</span>
               </label>
               <input
@@ -242,12 +244,12 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
                 required={mode === 'organization'}
                 value={formData.org_name}
                 onChange={handleChange}
-                className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+                className={inputClasses}
               />
             </div>
 
             <div>
-              <label htmlFor="org_title" className="block text-sm font-ui font-semibold text-navy mb-1">
+              <label htmlFor="org_title" className="block text-sm font-ui font-semibold text-text mb-1">
                 Your Title <span className="text-danger">*</span>
               </label>
               <input
@@ -257,13 +259,13 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
                 required={mode === 'organization'}
                 value={formData.org_title}
                 onChange={handleChange}
-                className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+                className={inputClasses}
                 placeholder="Executive Director"
               />
             </div>
 
             <div>
-              <label htmlFor="org_website" className="block text-sm font-ui font-semibold text-navy mb-1">
+              <label htmlFor="org_website" className="block text-sm font-ui font-semibold text-text mb-1">
                 Organization Website <span className="text-danger">*</span>
               </label>
               <input
@@ -273,13 +275,13 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
                 required={mode === 'organization'}
                 value={formData.org_website}
                 onChange={handleChange}
-                className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+                className={inputClasses}
                 placeholder="https://example.org"
               />
             </div>
 
             <div>
-              <label htmlFor="org_type" className="block text-sm font-ui font-semibold text-navy mb-1">
+              <label htmlFor="org_type" className="block text-sm font-ui font-semibold text-text mb-1">
                 Organization Type <span className="text-danger">*</span>
               </label>
               <select
@@ -288,7 +290,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
                 required={mode === 'organization'}
                 value={formData.org_type}
                 onChange={handleChange}
-                className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent"
+                className={inputClasses}
               >
                 <option value="">Select type...</option>
                 {ORG_TYPES.map(type => (
@@ -298,7 +300,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
             </div>
 
             <div>
-              <label htmlFor="org_statement" className="block text-sm font-ui font-semibold text-navy mb-1">
+              <label htmlFor="org_statement" className="block text-sm font-ui font-semibold text-text mb-1">
                 Brief Statement of Support (optional, 280 chars max)
               </label>
               <textarea
@@ -308,7 +310,7 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
                 rows={3}
                 value={formData.org_statement}
                 onChange={handleChange}
-                className="w-full border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent resize-none"
+                className={`${inputClasses} resize-none`}
               />
               <p className="text-xs text-text-light mt-1">{formData.org_statement.length}/280</p>
             </div>
@@ -322,9 +324,9 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
               name="display_publicly"
               checked={formData.display_publicly}
               onChange={handleChange}
-              className="rounded border-border text-amber focus:ring-amber"
+              className="rounded border-border text-navy focus:ring-navy"
             />
-            <span className="text-sm text-text">Display my name publicly as a signatory</span>
+            <span className="text-sm text-text-body">Display my name publicly as a signatory</span>
           </label>
           <label className="flex items-center gap-2">
             <input
@@ -332,14 +334,14 @@ export default function SignatureForm({ billSlug, billNumber }: SignatureFormPro
               name="email_updates"
               checked={formData.email_updates}
               onChange={handleChange}
-              className="rounded border-border text-amber focus:ring-amber"
+              className="rounded border-border text-navy focus:ring-navy"
             />
-            <span className="text-sm text-text">Email me updates about this campaign</span>
+            <span className="text-sm text-text-body">Email me updates about this campaign</span>
           </label>
         </div>
 
         {error && (
-          <div className="bg-red-50 border border-red-200 rounded-md p-3 text-sm text-red-800">
+          <div className="bg-red-50 border border-red-200 rounded-xl p-3 text-sm text-red-800">
             {error}
           </div>
         )}

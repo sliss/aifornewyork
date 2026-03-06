@@ -36,8 +36,8 @@ export default function SignatoryList({ billSlug }: { billSlug: string }) {
   const hasMore = signatories.length > INITIAL_COUNT;
 
   return (
-    <div className="bg-white border border-border rounded-lg p-6 md:p-8">
-      <h3 className="font-serif text-xl font-bold text-navy mb-1">
+    <div className="bg-white border border-border rounded-2xl p-6 md:p-8">
+      <h3 className="font-serif text-xl font-bold text-text mb-1">
         Signatories
       </h3>
       <p className="text-sm text-text-light mb-6">
@@ -48,7 +48,7 @@ export default function SignatoryList({ billSlug }: { billSlug: string }) {
         {visible.map((sig, i) => (
           <li key={i} className="py-3 first:pt-0 last:pb-0">
             <div className="flex items-baseline gap-2 flex-wrap">
-              <span className="font-ui text-sm font-semibold text-navy">
+              <span className="font-ui text-sm font-semibold text-text">
                 {sig.name}
               </span>
               {sig.type === 'organization' && sig.org_verified && (
@@ -69,7 +69,7 @@ export default function SignatoryList({ billSlug }: { billSlug: string }) {
         <button
           type="button"
           onClick={() => setExpanded(true)}
-          className="mt-4 text-sm font-ui font-semibold text-amber hover:text-amber-dark transition-colors"
+          className="mt-4 text-sm font-ui font-semibold text-navy hover:text-blue-dark transition-colors"
         >
           Show all {signatories.length.toLocaleString()} signatories
         </button>

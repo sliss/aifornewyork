@@ -35,10 +35,10 @@ export default async function SignPage({ params }: PageProps) {
   });
 
   return (
-    <div className="py-12 md:py-16">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6">
+    <div className="pt-[100px] pb-16 md:pb-20">
+      <div className="max-w-2xl mx-auto px-6">
         <div className="text-center mb-8">
-          <h1 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-3">
+          <h1 className="font-serif text-3xl md:text-4xl font-bold text-text mb-3">
             Sign the Open Letter
           </h1>
           <p className="text-text-light">

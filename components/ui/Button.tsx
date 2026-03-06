@@ -22,18 +22,18 @@ export default function Button({
   children,
   className,
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center font-ui font-semibold rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseClasses = 'inline-flex items-center justify-center font-ui font-semibold rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer';
 
   const variantClasses = {
-    primary: 'bg-amber text-white hover:bg-amber-light focus:ring-amber',
-    secondary: 'border-2 border-navy text-navy hover:bg-navy hover:text-white focus:ring-navy',
+    primary: 'bg-amber text-white hover:bg-amber-dark hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,107,74,0.35)] focus:ring-amber',
+    secondary: 'border-[1.5px] border-muted text-text hover:border-navy hover:text-navy hover:-translate-y-0.5 focus:ring-navy',
     danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
   };
 
   const sizeClasses = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-5 py-2.5 text-sm',
-    lg: 'px-8 py-3 text-base',
+    sm: 'px-4 py-1.5 text-sm',
+    md: 'px-6 py-2.5 text-sm',
+    lg: 'px-8 py-3.5 text-base',
   };
 
   const classes = cn(

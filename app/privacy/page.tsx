@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="py-12 md:py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <h1 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-8">Privacy Policy</h1>
+    <div className="pt-[100px] pb-16 md:pb-20">
+      <div className="max-w-3xl mx-auto px-6">
+        <h1 className="font-serif text-3xl md:text-4xl font-bold text-text mb-8">Privacy Policy</h1>
 
         <div className="prose">
           <p><em>Last updated: March 2026</em></p>
@@ -62,13 +62,13 @@ export default function PrivacyPage() {
           <h2>Data Retention</h2>
           <p>
             Your signature data is retained for the duration of our advocacy campaign. You may request deletion of your data at any time by emailing{' '}
-            <a href="mailto:aifornewyork@gmail.com" className="text-amber hover:text-amber-dark">aifornewyork@gmail.com</a>.
+            <a href="mailto:aifornewyork@gmail.com">aifornewyork@gmail.com</a>.
           </p>
 
           <h2>Contact</h2>
           <p>
             Questions about this privacy policy? Email us at{' '}
-            <a href="mailto:aifornewyork@gmail.com" className="text-amber hover:text-amber-dark">aifornewyork@gmail.com</a>.
+            <a href="mailto:aifornewyork@gmail.com">aifornewyork@gmail.com</a>.
           </p>
         </div>
       </div>

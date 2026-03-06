@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 export default function TakeActionPage() {
   return (
-    <div className="py-12 md:py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+    <div className="pt-[100px] pb-16 md:pb-20">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h1 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-4">
+          <h1 className="font-serif text-3xl md:text-4xl font-bold text-text mb-4">
             Take Action
           </h1>
           <p className="text-text-light max-w-2xl mx-auto">
@@ -23,8 +23,8 @@ export default function TakeActionPage() {
         {/* Step 1: Sign */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-8 bg-amber text-white rounded-full flex items-center justify-center font-ui font-bold text-sm">1</span>
-            <h2 className="font-serif text-xl font-bold text-navy">Sign the Open Letter</h2>
+            <span className="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-ui font-bold text-sm">1</span>
+            <h2 className="font-serif text-xl font-bold text-text">Sign the Open Letter</h2>
           </div>
           <p className="text-text-light mb-4 ml-11">
             Add your name to the growing list of New Yorkers opposing S7263.
@@ -39,8 +39,8 @@ export default function TakeActionPage() {
         {/* Step 2: Contact */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-8 bg-amber text-white rounded-full flex items-center justify-center font-ui font-bold text-sm">2</span>
-            <h2 className="font-serif text-xl font-bold text-navy">Contact Your Representatives</h2>
+            <span className="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-ui font-bold text-sm">2</span>
+            <h2 className="font-serif text-xl font-bold text-text">Contact Your Representatives</h2>
           </div>
           <p className="text-text-light mb-4 ml-11">
             A personal call or email from a constituent is one of the most effective ways to influence your legislator&apos;s vote.
@@ -53,8 +53,8 @@ export default function TakeActionPage() {
         {/* Step 3: Share */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-8 bg-amber text-white rounded-full flex items-center justify-center font-ui font-bold text-sm">3</span>
-            <h2 className="font-serif text-xl font-bold text-navy">Spread the Word</h2>
+            <span className="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-ui font-bold text-sm">3</span>
+            <h2 className="font-serif text-xl font-bold text-text">Spread the Word</h2>
           </div>
           <p className="text-text-light mb-4 ml-11">
             Share this campaign with friends, family, and colleagues. The more New Yorkers who speak up, the stronger our message.
@@ -64,7 +64,7 @@ export default function TakeActionPage() {
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("NY's proposed AI ban (S7263) would cut off access to legal, medical & financial information for millions. This affects tenants, immigrants, small business owners. Learn more & take action: https://aifornewyork.org")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-md font-ui text-sm font-semibold hover:bg-navy-light transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-navy text-white rounded-full font-ui text-sm font-semibold hover:bg-blue-dark hover:-translate-y-0.5 transition-all"
             >
               Share on Twitter
             </a>
@@ -72,7 +72,7 @@ export default function TakeActionPage() {
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://aifornewyork.org")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-navy text-white rounded-md font-ui text-sm font-semibold hover:bg-navy-light transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-navy text-white rounded-full font-ui text-sm font-semibold hover:bg-blue-dark hover:-translate-y-0.5 transition-all"
             >
               Share on Facebook
             </a>

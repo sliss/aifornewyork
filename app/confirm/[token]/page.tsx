@@ -19,9 +19,9 @@ export default async function ConfirmPage({ params }: PageProps) {
 
   if (!signature) {
     return (
-      <div className="py-20">
-        <div className="max-w-md mx-auto px-4 text-center">
-          <h1 className="font-serif text-3xl font-bold text-navy mb-4">Invalid Link</h1>
+      <div className="pt-[120px] pb-20">
+        <div className="max-w-md mx-auto px-6 text-center">
+          <h1 className="font-serif text-3xl font-bold text-text mb-4">Invalid Link</h1>
           <p className="text-text-light mb-6">
             This confirmation link is invalid or has expired. Please try signing the letter again.
           </p>
@@ -33,9 +33,9 @@ export default async function ConfirmPage({ params }: PageProps) {
 
   if (signature.email_confirmed) {
     return (
-      <div className="py-20">
-        <div className="max-w-md mx-auto px-4 text-center">
-          <h1 className="font-serif text-3xl font-bold text-navy mb-4">Already Confirmed</h1>
+      <div className="pt-[120px] pb-20">
+        <div className="max-w-md mx-auto px-6 text-center">
+          <h1 className="font-serif text-3xl font-bold text-text mb-4">Already Confirmed</h1>
           <p className="text-text-light mb-6">
             Your signature has already been confirmed. Thank you for your support!
           </p>
@@ -53,12 +53,12 @@ export default async function ConfirmPage({ params }: PageProps) {
   const totalCount = await Signature.countDocuments({ email_confirmed: true });
 
   return (
-    <div className="py-20">
-      <div className="max-w-md mx-auto px-4 text-center">
-        <div className="text-5xl mb-4">&#10003;</div>
-        <h1 className="font-serif text-3xl font-bold text-navy mb-4">Signature Confirmed!</h1>
+    <div className="pt-[120px] pb-20">
+      <div className="max-w-md mx-auto px-6 text-center">
+        <div className="text-5xl mb-4 text-navy">&#10003;</div>
+        <h1 className="font-serif text-3xl font-bold text-text mb-4">Signature Confirmed!</h1>
         <p className="text-text-light mb-2">
-          Thank you, <strong>{signature.full_name}</strong>. Your signature has been confirmed.
+          Thank you, <strong className="text-text">{signature.full_name}</strong>. Your signature has been confirmed.
         </p>
         <p className="font-serif text-2xl font-bold text-navy mt-6 mb-1">
           {totalCount.toLocaleString()}
@@ -76,7 +76,7 @@ export default async function ConfirmPage({ params }: PageProps) {
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("I just signed the open letter opposing NY's AI Chatbot Ban (S7263). Join me: https://aifornewyork.org/sign/s7263-ai-chatbot-professional-advice-ban")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-ui text-amber hover:text-amber-dark"
+              className="text-sm font-ui text-navy hover:text-blue-dark transition-colors"
             >
               Share on Twitter
             </a>
@@ -84,7 +84,7 @@ export default async function ConfirmPage({ params }: PageProps) {
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://aifornewyork.org/sign/s7263-ai-chatbot-professional-advice-ban")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-ui text-amber hover:text-amber-dark"
+              className="text-sm font-ui text-navy hover:text-blue-dark transition-colors"
             >
               Share on Facebook
             </a>

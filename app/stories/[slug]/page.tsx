@@ -32,13 +32,13 @@ export default async function StoryDetailPage({ params }: PageProps) {
   const { frontmatter, content } = story;
 
   return (
-    <div className="py-12 md:py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+    <div className="pt-[100px] pb-16 md:pb-20">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="mb-10">
-          <span className="font-ui text-xs font-semibold text-amber uppercase tracking-wide">
+          <span className="font-mono text-xs font-medium text-amber uppercase tracking-[0.08em]">
             {frontmatter.use_case}
           </span>
-          <h1 className="font-serif text-3xl md:text-4xl font-bold text-navy mt-2 mb-4">
+          <h1 className="font-serif text-3xl md:text-4xl font-bold text-text mt-2 mb-4">
             {frontmatter.title}
           </h1>
           <div className="flex items-center gap-3 text-sm text-text-light font-ui">

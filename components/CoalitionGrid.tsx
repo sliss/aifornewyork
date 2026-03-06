@@ -25,7 +25,7 @@ export default function CoalitionGrid({ orgs, signatureCount }: CoalitionGridPro
           {orgs.map((org) => (
             <div
               key={org.name}
-              className="bg-white border border-border rounded-lg p-4 flex items-center justify-center min-h-[80px]"
+              className="bg-white border border-border rounded-2xl p-4 flex items-center justify-center min-h-[80px] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300"
             >
               {org.logo_url ? (
                 <img src={org.logo_url} alt={org.name} className="max-h-12 max-w-full" />
@@ -40,7 +40,7 @@ export default function CoalitionGrid({ orgs, signatureCount }: CoalitionGridPro
       <div className="text-center">
         <Link
           href="/sign/s7263-ai-chatbot-professional-advice-ban"
-          className="inline-flex items-center justify-center bg-amber text-white px-6 py-3 rounded-md font-ui font-semibold hover:bg-amber-light transition-colors"
+          className="inline-flex items-center justify-center bg-amber text-white px-8 py-3.5 rounded-full font-ui font-semibold hover:bg-amber-dark hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,107,74,0.35)] transition-all"
         >
           Join the Coalition
         </Link>
