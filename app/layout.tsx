@@ -40,12 +40,19 @@ export const metadata: Metadata = {
     siteName: 'AI For New York',
     title: 'AI For New York — Protecting New Yorkers\' Right to AI-Powered Information',
     description: 'A nonpartisan coalition fighting legislation that would strip legal, medical, and professional information from the people who need it most.',
+    images: [
+      {
+        url: 'https://aifornewyork.org/logo.png',
+        alt: 'AI For New York',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@aifornewyork',
     title: 'AI For New York',
     description: 'A nonpartisan coalition fighting legislation that would strip legal, medical, and professional information from the people who need it most.',
+    images: ['https://aifornewyork.org/logo.png'],
   },
 };
 
